@@ -1,11 +1,12 @@
 <?php
 
-require_once("../qiniu/fop.php");
-require_once("../qiniu/rs_utils.php");
-require_once("../qiniu/rsf.php");
+//$loader = require __DIR__ . "/../vendor/autoload.php";
+require __DIR__ . "/../vendor/autoload.php";
 
-$accessKey = getenv("QINIU_ACCESS_KEY");
-$secretKey = getenv("QINIU_SECRET_KEY");
+define( 'AccessKey' , 'Vhiv6a22kVN_zhtetbPNeG9sY3JUL1HG597EmBwQ' );
+define( 'SecretKey' , 'b5b5vNg5nnkwkPfW5ayicPE_pj6hqgKMQEaWQ6JD' );
+define( 'QINIU_BUCKET_NAME' , 'phpsdk' );
+define( 'QINIU_KEY_NAME' , 'file_name' );
 
 $tid = getenv("TRAVIS_JOB_NUMBER");
 
@@ -18,10 +19,7 @@ if (!empty($tid)) {
 }
 
 function initKeys() {
-	global $accessKey, $secretKey;
-	if (!empty($accessKey) && !empty($secretKey)) {
-		Qiniu_SetKeys($accessKey, $secretKey);
-	}
+    \Qiniu\Utils::Qiniu_SetKeys( AccessKey , SecretKey );
 }
 
 function getTid() {
