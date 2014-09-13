@@ -1,0 +1,19 @@
+{
+    "name": "xjtuwangke/qiniu-php-sdk",
+    "description": "QINIU SDK forked from qiniu/php-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wangke",
+            "email": "wangke85@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-0":{
+            "Qiniu" : "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4"
+    }
+}
