@@ -10,7 +10,8 @@
     ],
     "autoload":{
         "psr-0":{
-            "Qiniu\\" : "src/"
+            "Qiniu\\" : "src/" ,
+            "QiniuImage\\" : "src/"
         }
     },
     "require": {
