@@ -13,8 +13,6 @@ class QiniuAPIParameter {
 
     public static $name = '';
 
-    protected $inUse = false;
-
     protected $parameters = array();
 
     protected $default_parameters = array();
@@ -30,17 +28,7 @@ class QiniuAPIParameter {
     }
 
     public function __toString(){
-        if( $this->inUse ){
-            return "/" . static::$name . '/' . $this->parameterToString();
-        }
-        else{
-            return '';
-        }
-    }
-
-    public function inUse( $bool = true ){
-        $this->inUse = (boolean) $bool;
-        return $this;
+        return "/" . static::$name . '/' . $this->parameterToString();
     }
 
     protected function setParameter( $key , $value ){
