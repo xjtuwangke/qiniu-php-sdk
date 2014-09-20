@@ -33,14 +33,11 @@ class ImageMogr2 extends ImageView2{
     }
 
 
-    public function thumbnail(){
-
-    }
-
-
-
-    public function crop(){
-
+    public function test(){
+        $thumbnail = new ImageMogr2\Thumbnail();
+        $crop = new ImageMogr2\Crop();
+        $quality = new ImageMogr2\Quality();
+        $fop = 'imageMogr2' . $thumbnail . $crop . $quality;
     }
 
 

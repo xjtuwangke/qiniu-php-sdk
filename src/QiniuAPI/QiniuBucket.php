@@ -6,11 +6,12 @@
  * Time: 17:46
  */
 
-namespace QiniuResource;
+namespace QiniuAPI;
 
 use Qiniu\QiniuRSGetPolicy;
+use Qiniu\RSUtils;
 
-class ResourceBase {
+class QiniuBucket {
 
     protected static $domain = null;
 
@@ -24,14 +25,20 @@ class ResourceBase {
         static::$isPrivate = (boolean) $private;
     }
 
-    public static function getURL( $url ){
+    public static function makeURL( $key , $fops = array() ){
+        $baseUrl = RSUtils::Qiniu_RS_MakeBaseUrl( static::$domain , $key );
+        if( ! empty( $fops ) ){
+            $baseUrl.= '?' . implode( '|' , $fops );
+        }
         if( false == static::$isPrivate ){
-            return $url;
+            return $baseUrl;
         }
         else{
             $getPolicy = new QiniuRSGetPolicy();
-            return $getPolicy->MakeRequest( $url , null );
+            return $getPolicy->MakeRequest( $baseUrl , null );
         }
+
+
     }
 
 
