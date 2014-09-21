@@ -69,20 +69,20 @@ class Crop extends QiniuAPIParameter{
     public function dx( $dx ){
         $dx = (int) $dx;
         if( $dx >= 0 ){
-            $this->setParameter( 'dx' , 'a' . $dx );
+            return $this->setParameter( 'dx' , 'a' . $dx );
         }
         else{
-            $this->setParameter( 'dx' , '-' . abs( $dx ) );
+            return $this->setParameter( 'dx' , '-' . abs( $dx ) );
         }
     }
 
     public function dy( $dy ){
         $dy = (int) $dy;
         if( $dy >= 0 ){
-            $this->setParameter( 'dy' , 'a' . $dy );
+            return $this->setParameter( 'dy' , 'a' . $dy );
         }
         else{
-            $this->setParameter( 'dy' , '-' . abs( $dy ) );
+            return $this->setParameter( 'dy' , '-' . abs( $dy ) );
         }
     }
 
@@ -102,7 +102,7 @@ class Crop extends QiniuAPIParameter{
 
     public function __toString(){
         $string = parent::__toString();
-        return '/gravity' . $this->gravity . $string;
+        return '/gravity/' . $this->gravity . $string;
     }
 
 

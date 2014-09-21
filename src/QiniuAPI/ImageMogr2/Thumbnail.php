@@ -94,9 +94,13 @@ class Thumbnail extends QiniuAPIParameter{
         if( $scale =  $this->getParameter( 'scale') ){
             return $scale;
         }
-        $width = '';
-        $height = '';
-        if( $width = $this->getParameter( 'width' ) || $height = $this->getParameter( 'height' ) ){
+        $width = $this->getParameter( 'width' , '' );
+        $height = $this->getParameter( 'height' , '' );
+        $maxWidth = $this->getParameter( 'maxWidth' , '' );
+        $maxHeight = $this->getParameter( 'maxHeight' , '' );
+        $minWidth = $this->getParameter( 'minWidth' , '' );
+        $minHeight = $this->getParameter( 'minHeight' , '' );
+        if( $width || $height ){
             if( false == $this->getParameter('contain') ){
                 return "!{$width}x{$height}r";
             }
@@ -104,10 +108,10 @@ class Thumbnail extends QiniuAPIParameter{
                 return "{$width}x{$height}!";
             }
         }
-        if( $maxWidth = $this->getParameter( 'maxWidth' ) && $maxHeight = $this->getParameter( 'maxHeight' ) ){
+        if( $maxWidth && $maxHeight ){
             return "{$maxWidth}x{$maxHeight}>";
         }
-        if( $minWidth = $this->getParameter( 'minWidth' ) && $minHeight = $this->getParameter( 'minHeight' ) ){
+        if( $minWidth && $minHeight ){
             return "{$minWidth}x{$minHeight}<";
         }
         if( $maxPixels = $this->getParameter( 'maxPixels' ) ){

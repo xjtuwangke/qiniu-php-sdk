@@ -18,7 +18,7 @@ class QiniuBucket {
     protected static $isPrivate = false;
 
     public static function setDomain( $domain ){
-        static::$domain = $domain;
+        static::$domain = $domain . '.qiniudn.com';
     }
 
     public static function setPrivate( $private = true ){
@@ -40,6 +40,5 @@ class QiniuBucket {
 
 
     }
-
 
 } 

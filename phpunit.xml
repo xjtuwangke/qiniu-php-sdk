@@ -13,6 +13,7 @@
     <testsuites>
         <testsuite name="Application Test Suite">
             <directory>./tests/Qiniu</directory>
+            <directory>./tests/QiniuAPI</directory>
         </testsuite>
     </testsuites>
 </phpunit>
