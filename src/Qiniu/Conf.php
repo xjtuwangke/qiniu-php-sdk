@@ -17,6 +17,8 @@ class Conf {
     public static $QINIU_RS_HOST = 'http://rs.qbox.me';
     public static $QINIU_RSF_HOST = 'http://rsf.qbox.me';
 
+    public static $QINIU_API_HOST = 'http://api.qiniu.com';
+
     public static $QINIU_ACCESS_KEY = '<Please apply your access key>';
     public static $QINIU_SECRET_KEY = '<Dont send your secret key to anyone>';
 

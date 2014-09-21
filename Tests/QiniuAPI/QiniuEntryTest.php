@@ -18,6 +18,7 @@ class QiniuEntryTest extends \PHPUnit_Framework_TestCase {
         $entry = QiniuBucket::entry( 'gogopher.jpg' );
         $this->assertEquals( $entry->entryURI() , 'qiniuphotos:gogopher.jpg' );
         $this->assertEquals( $entry->encodedEntryURI() , 'cWluaXVwaG90b3M6Z29nb3BoZXIuanBn' );
+        echo $entry->url();
     }
 
     public function testSaveAs(){
@@ -27,6 +28,6 @@ class QiniuEntryTest extends \PHPUnit_Framework_TestCase {
         $url = 'http://t-test.qiniudn.com/Ship.jpg?imageView/2/w/200/h/200';
         $saveAs = new SaveAs();
         $saveAs->urlSaveAsEntry( $url , $entry );
-        echo $saveAs;
+        $this->assertEquals( 'saveas/dC10ZXN0OlNoaXAtdGh1bWItMjAwLmpwZw==/sign/Vhiv6a22kVN_zhtetbPNeG9sY3JUL1HG597EmBwQ:IBM3E28ZN_1MaKU4TDF5kQ3Kux8=' , $saveAs->__toString() );
     }
 } 

@@ -11,6 +11,7 @@ namespace QiniuAPI;
 use QiniuAPI\ImageView2\ImageView2;
 use QiniuAPI\ImageMogr2\ImageMogr2;
 use QiniuAPI\Watermark\Watermark;
+use QiniuAPI\PermanentFOP\PermanentFOP;
 
 class QiniuAPITest extends \PHPUnit_Framework_TestCase
 {
@@ -94,6 +95,17 @@ class QiniuAPITest extends \PHPUnit_Framework_TestCase
     public function testAvthumb(){
         $avthumb = $this->avthumb();
         $this->assertEquals( $avthumb , 'avthumb/mp4/ab/192k/ar/8000/r/24/vb/128k' );
+    }
+
+    public function testPFOP(){
+        initKeys();
+        $fops = array(
+            $this->imageView2() ,
+            $this->imageMogr2() ,
+        );
+        QiniuBucket::setDomain( 'testDoamin' , 'qiniuphotos' );
+        $entry = QiniuBucket::entry( 'gogopher.jpg' );
+        PermanentFOP::pfop( $entry , $fops , 'xx' );
     }
 }
 

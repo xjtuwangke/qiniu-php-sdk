@@ -31,11 +31,23 @@ class QiniuEntry {
         return $this;
     }
 
+    public function bucket(){
+        return $this->bucket->bucketName();
+    }
+
+    public function key(){
+        return $this->key;
+    }
+
     public function entryURI(){
-        return $this->bucket->bucketName() . ':' . $this->key;
+        return $this->bucket() . ':' . $this->key();
     }
 
     public function encodedEntryURI(){
         return Utils::Qiniu_Encode( $this->entryURI() );
+    }
+
+    public function url( $fops = array() ){
+        return $this->bucket->makeURL( $this->key() , $fops );
     }
 } 
