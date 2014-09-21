@@ -104,9 +104,4 @@ class Crop extends QiniuAPIParameter{
         $string = parent::__toString();
         return '/gravity/' . $this->gravity . $string;
     }
-
-
-
-
-
 }

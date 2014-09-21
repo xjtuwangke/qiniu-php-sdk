@@ -37,8 +37,6 @@ class QiniuBucket {
             $getPolicy = new QiniuRSGetPolicy();
             return $getPolicy->MakeRequest( $baseUrl , null );
         }
-
-
     }
 
 } 

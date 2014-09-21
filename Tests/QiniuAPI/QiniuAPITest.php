@@ -10,9 +10,24 @@ namespace QiniuAPI;
 
 use QiniuAPI\ImageView2\ImageView2;
 use QiniuAPI\ImageMogr2\ImageMogr2;
+use QiniuAPI\Watermark\Watermark;
 
 class QiniuAPITest extends \PHPUnit_Framework_TestCase
 {
+
+    protected function watermark(){
+        $watermark = new Watermark();
+        $image1 = new \QiniuAPI\Watermark\Image();
+        $gravity1 = new \QiniuAPI\Watermark\Gravity();
+        $gravity1->gravity( \QiniuAPI\Watermark\Gravity::Gravity3 )->dx( 20 )->dy( 25 );
+        $image1->gravity( $gravity1 )->imageUrl( 'http://baidu.com/index.jpg' )->dissolve( 50 );
+        $text2  = new \QiniuAPI\Watermark\Text();
+        $gravity2 = new \QiniuAPI\Watermark\Gravity();
+        $gravity2->gravity( \QiniuAPI\Watermark\Gravity::Gravity9 )->dx( 21 )->dy( 22 );
+        $text2->gravity( $gravity2 )->text( '测试文字' )->font( '楷体' )->fontSize( 2 )->fill( '#FFFFFF' )->dissolve( 51 );
+        $watermark->addParameter( $image1 )->addParameter( $text2 );
+        return $watermark;
+    }
 
     protected function imageView2(){
         $imageView2 = new ImageView2();
@@ -56,6 +71,11 @@ class QiniuAPITest extends \PHPUnit_Framework_TestCase
     public function testImageMogr2(){
         $imageMogr2 = $this->imageMogr2();
         $this->assertEquals( $imageMogr2 , 'imageMogr2/auto-orient/strip/thumbnail/300x200>/gravity/NorthEast/crop/!100x150-2a3/quality/90/blur/20x3/format/jpg/interlace/1/rotate/90' );
+    }
+
+    public function testWatermark(){
+        $watermark = $this->watermark();
+        $this->assertEquals( $watermark , 'watermark/3/image/aHR0cDovL2JhaWR1LmNvbS9pbmRleC5qcGc=/dissolve/50/gravity/NorthEast/gravity/dx/20/dy/25/text/5rWL6K-V5paH5a2X/font/5qW35L2T/fontsize/2/fill/#FFFFFF/dissolve/51/gravity/SouthEast/gravity/dx/21/dy/22' );
     }
 
     public function testBucket(){
