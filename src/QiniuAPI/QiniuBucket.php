@@ -17,8 +17,22 @@ class QiniuBucket {
 
     protected static $isPrivate = false;
 
-    public static function setDomain( $domain ){
+    protected static $buacketName = null;
+
+    public static function setDomain( $domain , $bucketName = null ){
         static::$domain = $domain . '.qiniudn.com';
+        if( is_null( $bucketName ) ){
+            $bucketName = $domain;
+        }
+        static::$buacketName = $bucketName;
+    }
+
+    public static function domain(){
+        return static::$domain;
+    }
+
+    public static function bucketName(){
+        return static::$buacketName;
     }
 
     public static function setPrivate( $private = true ){
@@ -37,6 +51,12 @@ class QiniuBucket {
             $getPolicy = new QiniuRSGetPolicy();
             return $getPolicy->MakeRequest( $baseUrl , null );
         }
+    }
+
+    public static function entry( $key = null ){
+        $bucket = new static;
+        $entry = new QiniuEntry( $bucket , $key );
+        return $entry;
     }
 
 } 

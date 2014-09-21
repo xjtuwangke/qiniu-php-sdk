@@ -14,8 +14,14 @@ class QiniuMac {
     public $AccessKey;
     public $SecretKey;
 
-    public function __construct($accessKey, $secretKey)
+    public function __construct($accessKey = null , $secretKey = null )
     {
+        if( is_null( $accessKey ) ){
+            $accessKey = Conf::$QINIU_ACCESS_KEY;
+        }
+        if( is_null( $secretKey ) ){
+            $secretKey = Conf::$QINIU_SECRET_KEY;
+        }
         $this->AccessKey = $accessKey;
         $this->SecretKey = $secretKey;
     }

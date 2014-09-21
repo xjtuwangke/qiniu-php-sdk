@@ -27,8 +27,12 @@ class QiniuAPIParameter {
         return $this;
     }
 
+    public function name(){
+        return static::$name;
+    }
+
     public function __toString(){
-        return "/" . static::$name . '/' . $this->parameterToString();
+        return "/" . $this->name() . '/' . $this->parameterToString();
     }
 
     protected function setParameter( $key , $value ){

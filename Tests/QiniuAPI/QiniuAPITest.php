@@ -56,6 +56,12 @@ class QiniuAPITest extends \PHPUnit_Framework_TestCase
         return $imageMog2;
     }
 
+    protected function avthumb(){
+        $avthumb = new \QiniuAPI\Avthumb\Avthumb();
+        $avthumb->format('mp4')->audioBitRate( '192k' )->audioSamplingRate( 8000 )->videoFrameRate( 24 );
+        return $avthumb;
+    }
+
 
     public function testImageView2()
     {
@@ -83,6 +89,11 @@ class QiniuAPITest extends \PHPUnit_Framework_TestCase
         $url = QiniuBucket::makeURL( 'some_file' , [ $this->imageView2() , $this->imageMogr2() ] );
         $this->assertEquals( $url ,
             'http://test.qiniudn.com/some_file?imageView2/2/w/200/h/100/q/85/format/jpg/interlace/1|imageMogr2/auto-orient/strip/thumbnail/300x200>/gravity/NorthEast/crop/!100x150-2a3/quality/90/blur/20x3/format/jpg/interlace/1/rotate/90');
+    }
+
+    public function testAvthumb(){
+        $avthumb = $this->avthumb();
+        $this->assertEquals( $avthumb , 'avthumb/mp4/ab/192k/ar/8000/r/24/vb/128k' );
     }
 }
 

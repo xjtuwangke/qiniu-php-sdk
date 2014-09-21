@@ -31,10 +31,38 @@ class QiniuFop {
         return $this;
     }
 
+    protected function setParameter( $key , $value ){
+        $this->parameters[$key] = $value;
+        return $this;
+    }
+
+    protected function getParameter( $key , $default = null ){
+        if( array_key_exists( $key , $this->parameters ) ){
+            return $this->parameters[$key];
+        }
+        else{
+            return $default;
+        }
+    }
+
+    public function name(){
+        return static::$name;
+    }
+
     public function __toString(){
-        $string = static::$name;
-        foreach( $this->parameters as $parameter ){
-            $string.= (string) $parameter;
+        $string = $this->name();
+        foreach( $this->parameters as $key => $parameter ){
+            if( is_object( $parameter ) ){
+                $string.= (string) $parameter;
+            }
+            elseif( is_string( $parameter ) || is_numeric( $parameter )){
+                if( substr( $key , 0 , 2 ) != '__' ){
+                    $string.= '/' . $key . '/' . $parameter;
+                }
+                else{
+                    $string.= '/' . $parameter ;
+                }
+            }
         }
         return $string;
     }
