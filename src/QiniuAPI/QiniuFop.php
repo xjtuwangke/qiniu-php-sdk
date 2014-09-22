@@ -66,4 +66,18 @@ class QiniuFop {
         }
         return $string;
     }
+
+    public function toArray(){
+        $result = array();
+        foreach( $this->parameters as $key => $parameter ){
+            if( is_string( $parameter ) || is_numeric( $parameter )){
+                $result[$key] = $parameter;
+            }
+        }
+        return $result;
+    }
+
+    public function toJson(){
+        return json_encode( $this->toArray() );
+    }
 }

@@ -9,6 +9,7 @@
 namespace QiniuAPI;
 
 use Qiniu\QiniuRSGetPolicy;
+use QiniuAPI\PutPolicy\PutPolicy;
 use Qiniu\RSUtils;
 
 class QiniuBucket {
@@ -17,14 +18,14 @@ class QiniuBucket {
 
     protected static $isPrivate = false;
 
-    protected static $buacketName = null;
+    protected static $bucketName = null;
 
     public static function setDomain( $domain , $bucketName = null ){
         static::$domain = $domain . '.qiniudn.com';
         if( is_null( $bucketName ) ){
             $bucketName = $domain;
         }
-        static::$buacketName = $bucketName;
+        static::$bucketName = $bucketName;
     }
 
     public static function domain(){
@@ -32,7 +33,7 @@ class QiniuBucket {
     }
 
     public static function bucketName(){
-        return static::$buacketName;
+        return static::$bucketName;
     }
 
     public static function setPrivate( $private = true ){
@@ -59,4 +60,29 @@ class QiniuBucket {
         return $entry;
     }
 
-} 
+    public static function putPolicyFactory(){
+        $policy = new PutPolicy();
+        $policy->setScope( static::bucketName() )
+            ->detectMime()
+            ->returnBody( array(
+                'hash' => '$(etag)' ,
+                'fname' => '$(fname)' ,
+                'mime'  => '$(mimeType)' ,
+                'width' => '$(imageInfo.width)' ,
+                'height' => '$(imageInfo.height)' ,
+                'ext' => '$(ext)' ,
+            ) );
+        return $policy;
+    }
+
+    public static function putCallback(){
+        //{"hash":"Fh-FspHbcv9S66tS76vazV4vrO6y","fname":"qiniu_test.jpg","mime":"image/jpeg","width":"245","height":"300","ext":".jpg"}
+    }
+
+    public static function putToken( $key ){
+        $putPolicy = static::putPolicyFactory();
+        $putPolicy->setScope( static::bucketName() , $key );
+        return $putPolicy->token();
+    }
+
+}
