@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>QiniuAPI\Watermark\Text | qiniu-php-sdk API (for master)</title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">qiniu-php-sdk API (for master)</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../QiniuAPI/Watermark.html">QiniuAPI\Watermark</a>\Text</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>Text</strong>        extends <a href="../../QiniuAPI/QiniuAPIParameter.html"><abbr title="QiniuAPI\QiniuAPIParameter">QiniuAPIParameter</abbr></a></p>
+
+            <div class="description">
+            <p>文字水印</p>
+            <p>
+</p>
+        </div>
+    
+    
+            <h2>Properties</h2>
+
+            <table>
+                    <tr>
+                <td class="type" id="property_name">
+                    static                                        
+                </td>
+                <td>$name</td>
+                <td class="last">
+</td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_reset">reset</a>()
+                    <p>参数reset</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_text">text</a>(<abbr title="QiniuAPI\Watermark\$text">$text</abbr> $text)
+                    <p>水印文字内容</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_font">font</a>(<abbr title="QiniuAPI\Watermark\$font">$font</abbr> $font)
+                    <p>水印文字字体</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_fontSize">fontSize</a>(<abbr title="QiniuAPI\Watermark\$fontSize">$fontSize</abbr> $fontSize)
+                    <p>水印文字大小，单位: 缇，等于1/20磅，缺省值0（默认大小）</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_fill">fill</a>(<abbr title="QiniuAPI\Watermark\$color">$color</abbr> $color)
+                    <p>水印文字颜色，RGB格式，可以是颜色名称（比如red）或十六进制（比如#FF0000），参考RGB颜色编码表，缺省为白色(TODO)</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_dissolve">dissolve</a>(<abbr title="QiniuAPI\Watermark\$int">$int</abbr> $int)
+                    <p>透明度，取值范围1-100，缺省值100（完全不透明）</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_gravity">gravity</a>(<a href="../../QiniuAPI/Watermark/Gravity.html"><abbr title="QiniuAPI\Watermark\Gravity">Gravity</abbr></a> $gravity)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_parameterToString">parameterToString</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method_reset">
+        <div class="location">at line 32</div>
+        <code>            public            <abbr title="QiniuAPI\$this">$this</abbr>
+    <strong>reset</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>参数reset</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_text">
+        <div class="location">at line 43</div>
+        <code>            public            <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+    <strong>text</strong>(<abbr title="QiniuAPI\Watermark\$text">$text</abbr> $text)</code>
+    </h3>
+    <div class="details">
+        <p>水印文字内容</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\Watermark\$text">$text</abbr></td>
+                <td>$text</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\Watermark\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_font">
+        <div class="location">at line 52</div>
+        <code>            public            <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+    <strong>font</strong>(<abbr title="QiniuAPI\Watermark\$font">$font</abbr> $font)</code>
+    </h3>
+    <div class="details">
+        <p>水印文字字体</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\Watermark\$font">$font</abbr></td>
+                <td>$font</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\Watermark\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_fontSize">
+        <div class="location">at line 61</div>
+        <code>            public            <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+    <strong>fontSize</strong>(<abbr title="QiniuAPI\Watermark\$fontSize">$fontSize</abbr> $fontSize)</code>
+    </h3>
+    <div class="details">
+        <p>水印文字大小，单位: 缇，等于1/20磅，缺省值0（默认大小）</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\Watermark\$fontSize">$fontSize</abbr></td>
+                <td>$fontSize</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\Watermark\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_fill">
+        <div class="location">at line 70</div>
+        <code>            public            <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+    <strong>fill</strong>(<abbr title="QiniuAPI\Watermark\$color">$color</abbr> $color)</code>
+    </h3>
+    <div class="details">
+        <p>水印文字颜色，RGB格式，可以是颜色名称（比如red）或十六进制（比如#FF0000），参考RGB颜色编码表，缺省为白色(TODO)</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\Watermark\$color">$color</abbr></td>
+                <td>$color</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\Watermark\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_dissolve">
+        <div class="location">at line 79</div>
+        <code>            public            <abbr title="QiniuAPI\Watermark\$this">$this</abbr>
+    <strong>dissolve</strong>(<abbr title="QiniuAPI\Watermark\$int">$int</abbr> $int)</code>
+    </h3>
+    <div class="details">
+        <p>透明度，取值范围1-100，缺省值100（完全不透明）</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\Watermark\$int">$int</abbr></td>
+                <td>$int</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\Watermark\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_gravity">
+        <div class="location">at line 83</div>
+        <code>            public            
+    <strong>gravity</strong>(<a href="../../QiniuAPI/Watermark/Gravity.html"><abbr title="QiniuAPI\Watermark\Gravity">Gravity</abbr></a> $gravity)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../QiniuAPI/Watermark/Gravity.html"><abbr title="QiniuAPI\Watermark\Gravity">Gravity</abbr></a></td>
+                <td>$gravity</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_parameterToString">
+        <div class="location">at line 87</div>
+        <code>            public            
+    <strong>parameterToString</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

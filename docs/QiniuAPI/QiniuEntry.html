@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>QiniuAPI\QiniuEntry | qiniu-php-sdk API (for master)</title>
+                    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../classes.html">Classes</a></li>
+                            <li><a href="../namespaces.html">Namespaces</a></li>
+                        <li><a href="../interfaces.html">Interfaces</a></li>
+            <li><a href="../traits.html">Traits</a></li>
+            <li><a href="../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">qiniu-php-sdk API (for master)</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../QiniuAPI.html">QiniuAPI</a>\QiniuEntry</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>QiniuEntry</strong></p>
+
+            <div class="description">
+            <p>Qiniu Entry抽象类</p>
+            <p>
+</p>
+        </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(<a href="../QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a> $bucket, $key = null)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setBucket">setBucket</a>(<a href="../QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a> $bucket)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setKey">setKey</a>(<abbr title="QiniuAPI\$key">$key</abbr> $key)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    null|string
+                </td>
+                <td class="last">
+                    <a href="#method_bucket">bucket</a>()
+                    <p>获取bucketName</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    null|string
+                </td>
+                <td class="last">
+                    <a href="#method_key">key</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_entryURI">entryURI</a>()
+                    <p>返回bucket:key形式的entryURI</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    mixed
+                </td>
+                <td class="last">
+                    <a href="#method_encodedEntryURI">encodedEntryURI</a>()
+                    <p>bucket:key形式的entryURI做urlsafe<em>base64</em>encode</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_url">url</a>(array $fops = array())
+                    <p>返回entry的公网url</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 33</div>
+        <code>            public            
+    <strong>__construct</strong>(<a href="../QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a> $bucket, $key = null)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></td>
+                <td>$bucket</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$key</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setBucket">
+        <div class="location">at line 42</div>
+        <code>            public            <abbr title="QiniuAPI\$this">$this</abbr>
+    <strong>setBucket</strong>(<a href="../QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a> $bucket)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></td>
+                <td>$bucket</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setKey">
+        <div class="location">at line 51</div>
+        <code>            public            <abbr title="QiniuAPI\$this">$this</abbr>
+    <strong>setKey</strong>(<abbr title="QiniuAPI\$key">$key</abbr> $key)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\$key">$key</abbr></td>
+                <td>$key</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_bucket">
+        <div class="location">at line 60</div>
+        <code>            public            null|string
+    <strong>bucket</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>获取bucketName</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>null|string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_key">
+        <div class="location">at line 72</div>
+        <code>            public            null|string
+    <strong>key</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>null|string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_entryURI">
+        <div class="location">at line 80</div>
+        <code>            public            string
+    <strong>entryURI</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>返回bucket:key形式的entryURI</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_encodedEntryURI">
+        <div class="location">at line 88</div>
+        <code>            public            mixed
+    <strong>encodedEntryURI</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>bucket:key形式的entryURI做urlsafe<em>base64</em>encode</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_url">
+        <div class="location">at line 97</div>
+        <code>            public            string
+    <strong>url</strong>(array $fops = array())</code>
+    </h3>
+    <div class="details">
+        <p>返回entry的公网url</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>array</td>
+                <td>$fops</td>
+                <td>fop操作组成的数组</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

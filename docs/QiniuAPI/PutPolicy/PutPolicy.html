@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>QiniuAPI\PutPolicy\PutPolicy | qiniu-php-sdk API (for master)</title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">qiniu-php-sdk API (for master)</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../QiniuAPI/PutPolicy.html">QiniuAPI\PutPolicy</a>\PutPolicy</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>PutPolicy</strong>        extends <a href="../../QiniuAPI/QiniuFop.html"><abbr title="QiniuAPI\QiniuFop">QiniuFop</abbr></a></p>
+
+            <div class="description">
+            <p>Qiniu上传凭证</p>
+            <p>
+</p>
+        </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_reset">reset</a>()
+                    <p>重置参数</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setScope">setScope</a>(<abbr title="QiniuAPI\PutPolicy\$bucket">$bucket</abbr> $bucket, null $key = null)
+                    <p>指定上传的目标资源空间（Bucket）和资源名（Key） 有两种格式： 1.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setExprire">setExprire</a>(<abbr title="QiniuAPI\PutPolicy\$minutes">$minutes</abbr> $minutes)
+                    <p>上传请求授权有效时间(分钟数)</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_insertOnly">insertOnly</a>(<abbr title="QiniuAPI\PutPolicy\$bool">$bool</abbr> $bool)
+                    <p>限定为“新增”语意 如果设置为非0值，则无论scope设置为什么形式，仅能以新增模式上传文件。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_endUser">endUser</a>(<abbr title="QiniuAPI\PutPolicy\$endUser">$endUser</abbr> $endUser)
+                    <p>唯一属主标识 特殊场景下非常有用，比如根据App-Client标识给图片或视频打水印。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_unsetCallback">unsetCallback</a>()
+                    <p>取消callbackXXX设置 callbackXXX与returnXXX不能共存</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_returnUrl">returnUrl</a>(<abbr title="QiniuAPI\PutPolicy\$url">$url</abbr> $url)
+                    <p>Web端文件上传成功后，浏览器执行303跳转的URL 通常用于HTML Form上传。 文件上传成功后会跳转到<returnUrl>?upload_ret=<queryString>, <queryString>包含returnBody内容。 如不设置returnUrl，则直接将returnBody的内容返回给客户端。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_returnBody">returnBody</a>(array $body)
+                    <p>上传成功后，自定义七牛云最终返回給上传端（在指定returnUrl时是携带在跳转路径参数中）的数据 支持魔法变量和自定义变量。returnBody 要求是合法的 JSON 文本。如：{"key": $(key), "hash": $(etag), "w": $(imageInfo.width), "h": $(imageInfo.height)}。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_unsetReturn">unsetReturn</a>()
+                    <p>取消returnXXX设置 callbackXXX与returnXXX不能共存</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_callbackUrl">callbackUrl</a>(<abbr title="QiniuAPI\PutPolicy\$url">$url</abbr> $url)
+                    <p>上传成功后，七牛云向App-Server发送POST请求的URL 必须是公网上可以正常进行POST请求并能响应HTTP/1.1 200 OK的有效URL。 另外，为了给客户端有一致的体验，我们要求 callbackUrl 返回包 Content-Type 为 "application/json"，即返回的内容必须是合法的 JSON 文本。 出于高可用的考虑，本字段允许设置多个 callbackUrl(用 ; 分隔)，在前一个 callbackUrl 请求失败的时候会依次重试下一个 callbackUrl。 一个典型例子是 http://<ip1>/callback;http://<ip2>/callback，并同时指定下面的 callbackHost 字段。 在 callbackUrl 中使用 ip 的好处是减少了对 dns 解析的依赖，可改善回调的性能和稳定性。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_callbackHost">callbackHost</a>(<abbr title="QiniuAPI\PutPolicy\$host">$host</abbr> $host)
+                    <p>上传成功后，七牛云向App-Server发送回调通知时的 Host 值，仅当同时设置了 callbackUrl 时有效。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_callbackBody">callbackBody</a>(array $body)
+                    <p>上传成功后，七牛云向App-Server发送POST请求的数据 支持魔法变量和自定义变量。 callbackBody 要求是合法的 url query string。如：key=$(key)&amp;hash=$(etag)&amp;w=$(imageInfo.width)&amp;h=$(imageInfo.height)。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_persistentOps">persistentOps</a>(<abbr title="QiniuAPI\PutPolicy\$fops">$fops</abbr> $fops)
+                    <p>资源上传成功后触发执行的预转持久化处理指令列表 每个指令是一个API规格字符串，多个指令用“;”分隔。 请参看详解与示例。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_persistentNotifyUrl">persistentNotifyUrl</a>(<abbr title="QiniuAPI\PutPolicy\$url">$url</abbr> $url)
+                    <p>接收预转持久化结果通知的URL 必须是公网上可以正常进行POST请求并能响应HTTP/1.1 200 OK的有效URL。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_persistentPipeline">persistentPipeline</a>(<abbr title="QiniuAPI\PutPolicy\$pipeline">$pipeline</abbr> $pipeline)
+                    <p>转码队列名 资源上传成功后，触发转码时指定独立的队列进行转码。为空则表示使用公用队列，处理速度比较慢。建议使用专用队列</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_saveKey">saveKey</a>(<abbr title="QiniuAPI\PutPolicy\$key">$key</abbr> $key)
+                    <p>自定义资源名 支持魔法变量及自定义变量。这个字段仅当用户上传的时候没有主动指定key的时候起作用。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_fsizeLimit">fsizeLimit</a>(<abbr title="QiniuAPI\PutPolicy\$mb">$mb</abbr> $mb)
+                    <p>限定上传文件的大小，单位：MB 超过限制的上传内容会被判为上传失败，返回413状态码。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_detectMime">detectMime</a>(bool $bool = true)
+                    <p>开启MimeType侦测功能 设为非0值，则忽略上传端传递的文件MimeType信息，使用七牛服务器侦测内容后的判断结果 默认设为0值，如上传端指定了MimeType则直接使用该值，否则按如下顺序侦测MimeType值： 1.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_onlyImage">onlyImage</a>()
+                    <p>仅可上传图片</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_token">token</a>()
+                    <p>根据上传策略获取上传token</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method_reset">
+        <div class="location">at line 44</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>reset</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>重置参数</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setScope">
+        <div class="location">at line 58</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>setScope</strong>(<abbr title="QiniuAPI\PutPolicy\$bucket">$bucket</abbr> $bucket, null $key = null)</code>
+    </h3>
+    <div class="details">
+        <p>指定上传的目标资源空间（Bucket）和资源名（Key） 有两种格式： 1.</p>
+        <p><bucket>，表示允许用户上传文件到指定的 bucket。在这种模式下文件只能“新增”，若已存在同名资源则会失败；
+2. <bucket>:<key>，表示只允许用户上传指定key的文件。在这种模型下文件默认允许“修改”，已存在同名资源则会本次覆盖。如果希望只能上传指定key的文件，并且不允许修改，那么可以将下面的 insertOnly 属性值设为 1。</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$bucket">$bucket</abbr></td>
+                <td>$bucket</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>null</td>
+                <td>$key</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setExprire">
+        <div class="location">at line 72</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>setExprire</strong>(<abbr title="QiniuAPI\PutPolicy\$minutes">$minutes</abbr> $minutes)</code>
+    </h3>
+    <div class="details">
+        <p>上传请求授权有效时间(分钟数)</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$minutes">$minutes</abbr></td>
+                <td>$minutes</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_insertOnly">
+        <div class="location">at line 82</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>insertOnly</strong>(<abbr title="QiniuAPI\PutPolicy\$bool">$bool</abbr> $bool)</code>
+    </h3>
+    <div class="details">
+        <p>限定为“新增”语意 如果设置为非0值，则无论scope设置为什么形式，仅能以新增模式上传文件。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$bool">$bool</abbr></td>
+                <td>$bool</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_endUser">
+        <div class="location">at line 92</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>endUser</strong>(<abbr title="QiniuAPI\PutPolicy\$endUser">$endUser</abbr> $endUser)</code>
+    </h3>
+    <div class="details">
+        <p>唯一属主标识 特殊场景下非常有用，比如根据App-Client标识给图片或视频打水印。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$endUser">$endUser</abbr></td>
+                <td>$endUser</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_unsetCallback">
+        <div class="location">at line 100</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>unsetCallback</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>取消callbackXXX设置 callbackXXX与returnXXX不能共存</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_returnUrl">
+        <div class="location">at line 112</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>returnUrl</strong>(<abbr title="QiniuAPI\PutPolicy\$url">$url</abbr> $url)</code>
+    </h3>
+    <div class="details">
+        <p>Web端文件上传成功后，浏览器执行303跳转的URL 通常用于HTML Form上传。 文件上传成功后会跳转到<returnUrl>?upload_ret=<queryString>, <queryString>包含returnBody内容。 如不设置returnUrl，则直接将returnBody的内容返回给客户端。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$url">$url</abbr></td>
+                <td>$url</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_returnBody">
+        <div class="location">at line 122</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>returnBody</strong>(array $body)</code>
+    </h3>
+    <div class="details">
+        <p>上传成功后，自定义七牛云最终返回給上传端（在指定returnUrl时是携带在跳转路径参数中）的数据 支持魔法变量和自定义变量。returnBody 要求是合法的 JSON 文本。如：{"key": $(key), "hash": $(etag), "w": $(imageInfo.width), "h": $(imageInfo.height)}。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>array</td>
+                <td>$body</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_unsetReturn">
+        <div class="location">at line 130</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>unsetReturn</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>取消returnXXX设置 callbackXXX与returnXXX不能共存</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_callbackUrl">
+        <div class="location">at line 144</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>callbackUrl</strong>(<abbr title="QiniuAPI\PutPolicy\$url">$url</abbr> $url)</code>
+    </h3>
+    <div class="details">
+        <p>上传成功后，七牛云向App-Server发送POST请求的URL 必须是公网上可以正常进行POST请求并能响应HTTP/1.1 200 OK的有效URL。 另外，为了给客户端有一致的体验，我们要求 callbackUrl 返回包 Content-Type 为 "application/json"，即返回的内容必须是合法的 JSON 文本。 出于高可用的考虑，本字段允许设置多个 callbackUrl(用 ; 分隔)，在前一个 callbackUrl 请求失败的时候会依次重试下一个 callbackUrl。 一个典型例子是 http://<ip1>/callback;http://<ip2>/callback，并同时指定下面的 callbackHost 字段。 在 callbackUrl 中使用 ip 的好处是减少了对 dns 解析的依赖，可改善回调的性能和稳定性。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$url">$url</abbr></td>
+                <td>$url</td>
+                <td>array|string</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_callbackHost">
+        <div class="location">at line 157</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>callbackHost</strong>(<abbr title="QiniuAPI\PutPolicy\$host">$host</abbr> $host)</code>
+    </h3>
+    <div class="details">
+        <p>上传成功后，七牛云向App-Server发送回调通知时的 Host 值，仅当同时设置了 callbackUrl 时有效。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$host">$host</abbr></td>
+                <td>$host</td>
+                <td>string</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_callbackBody">
+        <div class="location">at line 168</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>callbackBody</strong>(array $body)</code>
+    </h3>
+    <div class="details">
+        <p>上传成功后，七牛云向App-Server发送POST请求的数据 支持魔法变量和自定义变量。 callbackBody 要求是合法的 url query string。如：key=$(key)&amp;hash=$(etag)&amp;w=$(imageInfo.width)&amp;h=$(imageInfo.height)。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>array</td>
+                <td>$body</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_persistentOps">
+        <div class="location">at line 183</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>persistentOps</strong>(<abbr title="QiniuAPI\PutPolicy\$fops">$fops</abbr> $fops)</code>
+    </h3>
+    <div class="details">
+        <p>资源上传成功后触发执行的预转持久化处理指令列表 每个指令是一个API规格字符串，多个指令用“;”分隔。 请参看详解与示例。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$fops">$fops</abbr></td>
+                <td>$fops</td>
+                <td>array|QiniuFop</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_persistentNotifyUrl">
+        <div class="location">at line 197</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>persistentNotifyUrl</strong>(<abbr title="QiniuAPI\PutPolicy\$url">$url</abbr> $url)</code>
+    </h3>
+    <div class="details">
+        <p>接收预转持久化结果通知的URL 必须是公网上可以正常进行POST请求并能响应HTTP/1.1 200 OK的有效URL。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$url">$url</abbr></td>
+                <td>$url</td>
+                <td>string</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_persistentPipeline">
+        <div class="location">at line 207</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>persistentPipeline</strong>(<abbr title="QiniuAPI\PutPolicy\$pipeline">$pipeline</abbr> $pipeline)</code>
+    </h3>
+    <div class="details">
+        <p>转码队列名 资源上传成功后，触发转码时指定独立的队列进行转码。为空则表示使用公用队列，处理速度比较慢。建议使用专用队列</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$pipeline">$pipeline</abbr></td>
+                <td>$pipeline</td>
+                <td>string</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_saveKey">
+        <div class="location">at line 217</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>saveKey</strong>(<abbr title="QiniuAPI\PutPolicy\$key">$key</abbr> $key)</code>
+    </h3>
+    <div class="details">
+        <p>自定义资源名 支持魔法变量及自定义变量。这个字段仅当用户上传的时候没有主动指定key的时候起作用。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$key">$key</abbr></td>
+                <td>$key</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_fsizeLimit">
+        <div class="location">at line 227</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>fsizeLimit</strong>(<abbr title="QiniuAPI\PutPolicy\$mb">$mb</abbr> $mb)</code>
+    </h3>
+    <div class="details">
+        <p>限定上传文件的大小，单位：MB 超过限制的上传内容会被判为上传失败，返回413状态码。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\PutPolicy\$mb">$mb</abbr></td>
+                <td>$mb</td>
+                <td>float</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_detectMime">
+        <div class="location">at line 242</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>detectMime</strong>(bool $bool = true)</code>
+    </h3>
+    <div class="details">
+        <p>开启MimeType侦测功能 设为非0值，则忽略上传端传递的文件MimeType信息，使用七牛服务器侦测内容后的判断结果 默认设为0值，如上传端指定了MimeType则直接使用该值，否则按如下顺序侦测MimeType值： 1.</p>
+        <p>检查文件扩展名；
+2. 检查Key扩展名；
+3. 侦测内容。
+如不能侦测出正确的值，会默认使用 application/octet-stream 。</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>bool</td>
+                <td>$bool</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_onlyImage">
+        <div class="location">at line 250</div>
+        <code>            public            <abbr title="QiniuAPI\PutPolicy\$this">$this</abbr>
+    <strong>onlyImage</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>仅可上传图片</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\PutPolicy\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_token">
+        <div class="location">at line 258</div>
+        <code>            public            string
+    <strong>token</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>根据上传策略获取上传token</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

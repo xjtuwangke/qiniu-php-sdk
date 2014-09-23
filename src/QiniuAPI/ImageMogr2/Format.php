@@ -10,6 +10,11 @@ namespace QiniuAPI\ImageMogr2;
 
 use QiniuAPI\QiniuAPIParameter;
 
+/**
+ * 图片格式 jpg|png|...
+ * @class Format
+ * @package QiniuAPI\ImageMogr2
+ */
 
 class Format extends QiniuAPIParameter{
 

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>QiniuAPI\ImageMogr2\Crop | qiniu-php-sdk API (for master)</title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">qiniu-php-sdk API (for master)</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../QiniuAPI/ImageMogr2.html">QiniuAPI\ImageMogr2</a>\Crop</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>Crop</strong>        extends <a href="../../QiniuAPI/QiniuAPIParameter.html"><abbr title="QiniuAPI\QiniuAPIParameter">QiniuAPIParameter</abbr></a></p>
+
+            <div class="description">
+            <p>裁剪操作</p>
+            <p>
+</p>
+        </div>
+    
+            <h2>Constants</h2>
+
+            <table>
+                    <tr>
+                <td>Gravity1</td>
+                <td class="last">
+                    <p><em>偏移锚点左上</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>Gravity2</td>
+                <td class="last">
+                    <p><em>偏移锚点中上</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>Gravity3</td>
+                <td class="last">
+                    <p><em>偏移锚点右上角</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>Gravity4</td>
+                <td class="last">
+                    <p><em>偏移锚点左中</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>Gravity5</td>
+                <td class="last">
+                    <p><em>偏移锚点正中</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>Gravity6</td>
+                <td class="last">
+                    <p><em>偏移锚点右中</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>Gravity7</td>
+                <td class="last">
+                    <p><em>偏移锚点左下</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>Gravity8</td>
+                <td class="last">
+                    <p><em>偏移锚点中下</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>Gravity9</td>
+                <td class="last">
+                    <p><em>偏移锚点右下</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table>
+                    <tr>
+                <td class="type" id="property_name">
+                    static                                        
+                </td>
+                <td>$name</td>
+                <td class="last">
+</td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\ImageMogr2\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_gravity">gravity</a>(<abbr title="QiniuAPI\ImageMogr2\$gravity">$gravity</abbr> $gravity)
+                    <p>裁剪锚点</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\ImageMogr2\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_widthAndHeight">widthAndHeight</a>(<abbr title="QiniuAPI\ImageMogr2\$width">$width</abbr> $width, <abbr title="QiniuAPI\ImageMogr2\$height">$height</abbr> $height)
+                    <p>/crop/<Width>x      指定目标图片宽度，高度不变。取值范围0-10000。 /crop/x<Height>      指定目标图片高度，宽度不变。取值范围0-10000。 /crop/<Width>x<Height>       同时指定目标图片宽高。取值范围0-10000。</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="QiniuAPI\ImageMogr2\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_cropSize">cropSize</a>(<abbr title="QiniuAPI\ImageMogr2\$width">$width</abbr> $width, <abbr title="QiniuAPI\ImageMogr2\$height">$height</abbr> $height)
+                    <p>/crop/!{cropSize}a<dx>a<dy>     相对于偏移锚点，向右偏移个像素，同时向下偏移个像素。 取值范围0－1000。 /crop/!{cropSize}-<dx>a<dy>      相对于偏移锚点，向下偏移个像素，同时从指定宽度中减去个像素。 取值范围0－1000。 /crop/!{cropSize}a<dx>-<dy>      相对于偏移锚点，向右偏移个像素，同时从指定高度中减去个像素。 取值范围0－1000。 /crop/!{cropSize}-<dx>-<dy>      相对于偏移锚点，从指定宽度中减去个像素，同时从指定高度中减去个像素。 取值范围0－1000</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_dx">dx</a>($dx)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_dy">dy</a>($dy)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method___toString">__toString</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 68</div>
+        <code>            public            
+    <strong>__construct</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_gravity">
+        <div class="location">at line 78</div>
+        <code>            public            <abbr title="QiniuAPI\ImageMogr2\$this">$this</abbr>
+    <strong>gravity</strong>(<abbr title="QiniuAPI\ImageMogr2\$gravity">$gravity</abbr> $gravity)</code>
+    </h3>
+    <div class="details">
+        <p>裁剪锚点</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\ImageMogr2\$gravity">$gravity</abbr></td>
+                <td>$gravity</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\ImageMogr2\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_widthAndHeight">
+        <div class="location">at line 91</div>
+        <code>            public            <abbr title="QiniuAPI\ImageMogr2\$this">$this</abbr>
+    <strong>widthAndHeight</strong>(<abbr title="QiniuAPI\ImageMogr2\$width">$width</abbr> $width, <abbr title="QiniuAPI\ImageMogr2\$height">$height</abbr> $height)</code>
+    </h3>
+    <div class="details">
+        <p>/crop/<Width>x      指定目标图片宽度，高度不变。取值范围0-10000。 /crop/x<Height>      指定目标图片高度，宽度不变。取值范围0-10000。 /crop/<Width>x<Height>       同时指定目标图片宽高。取值范围0-10000。</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\ImageMogr2\$width">$width</abbr></td>
+                <td>$width</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><abbr title="QiniuAPI\ImageMogr2\$height">$height</abbr></td>
+                <td>$height</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\ImageMogr2\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_cropSize">
+        <div class="location">at line 108</div>
+        <code>            public            <abbr title="QiniuAPI\ImageMogr2\$this">$this</abbr>
+    <strong>cropSize</strong>(<abbr title="QiniuAPI\ImageMogr2\$width">$width</abbr> $width, <abbr title="QiniuAPI\ImageMogr2\$height">$height</abbr> $height)</code>
+    </h3>
+    <div class="details">
+        <p>/crop/!{cropSize}a<dx>a<dy>     相对于偏移锚点，向右偏移个像素，同时向下偏移个像素。 取值范围0－1000。 /crop/!{cropSize}-<dx>a<dy>      相对于偏移锚点，向下偏移个像素，同时从指定宽度中减去个像素。 取值范围0－1000。 /crop/!{cropSize}a<dx>-<dy>      相对于偏移锚点，向右偏移个像素，同时从指定高度中减去个像素。 取值范围0－1000。 /crop/!{cropSize}-<dx>-<dy>      相对于偏移锚点，从指定宽度中减去个像素，同时从指定高度中减去个像素。 取值范围0－1000</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\ImageMogr2\$width">$width</abbr></td>
+                <td>$width</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><abbr title="QiniuAPI\ImageMogr2\$height">$height</abbr></td>
+                <td>$height</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="QiniuAPI\ImageMogr2\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_dx">
+        <div class="location">at line 112</div>
+        <code>            public            
+    <strong>dx</strong>($dx)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$dx</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_dy">
+        <div class="location">at line 122</div>
+        <code>            public            
+    <strong>dy</strong>($dy)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$dy</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method___toString">
+        <div class="location">at line 146</div>
+        <code>            public            string
+    <strong>__toString</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

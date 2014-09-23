@@ -8,6 +8,12 @@
 
 namespace QiniuAPI;
 
+/**
+ * FOP(比如imageMogr2,avthumb等)基类
+ * @class QiniuFop
+ * @package QiniuAPI
+ */
+
 class QiniuFop {
 
     protected static $name = '';

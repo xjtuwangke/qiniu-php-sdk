@@ -10,6 +10,11 @@ namespace QiniuAPI\ImageMogr2;
 
 use \QiniuAPI\QiniuFop;
 
+/**
+ * imageMogr2 API
+ * @class ImageMogr2
+ * @package QiniuAPI\ImageMogr2
+ */
 
 class ImageMogr2 extends QiniuFop{
 

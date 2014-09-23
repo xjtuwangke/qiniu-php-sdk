@@ -10,7 +10,12 @@ namespace QiniuAPI\ImageMogr2;
 
 use QiniuAPI\QiniuAPIParameter;
 
-
+/**
+ * 旋转角度
+ * 取值范围1-360，缺省为不旋转。
+ * @class Rotate
+ * @package QiniuAPI\ImageMogr2
+ */
 class Rotate extends QiniuAPIParameter{
 
     public static $name = 'rotate';
