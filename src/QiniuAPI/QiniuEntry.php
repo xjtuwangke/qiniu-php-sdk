@@ -31,6 +31,7 @@ class QiniuEntry {
      */
     protected $key = null;
 
+
     public function __construct( QiniuBucket $bucket , $key = null ){
         $this->bucket = $bucket;
         $this->key = $key;

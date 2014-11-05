@@ -22,6 +22,30 @@ class QiniuFop {
 
     protected $default_parameters = array();
 
+    protected static $marco = array();
+
+    /**
+     * 定义一个宏
+     * @param          $name
+     * @param callable $func
+     */
+    public static function marco( $name , callable $func ){
+        static::$marco[ $name ] = $func;
+    }
+
+    /**
+     * 调用一个宏
+     * @param $method
+     * @param $arg
+     * @return mixed
+     */
+    public static function __callStatic( $method , $arg ){
+        if( array_key_exists( $method , static::$marco ) ){
+            $func = static::$marco[ $method ];
+            return call_user_func_array( $func , $arg );
+        }
+    }
+
     public function __construct(){
         $this->reset();
         return $this;

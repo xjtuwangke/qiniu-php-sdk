@@ -146,6 +146,31 @@ var_dump( $rm );
  */
    ```
 
+### 宏命令
+
+```
+\QiniuAPI\QiniuFop::marco( 'watermark' , function( \QiniuAPI\QiniuEntry $entry ){
+    $watermark = new \QiniuAPI\Watermark\Watermark();
+    $image1 = new \QiniuAPI\Watermark\Image();
+    $gravity1 = new \QiniuAPI\Watermark\Gravity();
+    $gravity1->gravity( \QiniuAPI\Watermark\Gravity::Gravity3 )->dx( 20 )->dy( 25 );
+    $image1->gravity( $gravity1 )->imageUrl( 'http://www.baidu.com/img/baidu_jgylogo3.gif' )->dissolve( 50 );
+    $text2  = new \QiniuAPI\Watermark\Text();
+    $gravity2 = new \QiniuAPI\Watermark\Gravity();
+    $gravity2->gravity( \QiniuAPI\Watermark\Gravity::Gravity9 )->dx( 21 )->dy( 22 );
+    $text2->gravity( $gravity2 )->text( '测试文字' )->font( '楷体' )->fontSize( 40 )->fill( '#FFFFFF' )->dissolve( 51 );
+    $watermark->addParameter( $image1 )->addParameter( $text2 );
+    return $entry->url( [ $watermark ] );
+});
+$watermarked = \QiniuAPI\QiniuFop::watermark( MyBucket::entry( 'upload/ftp/gofarms-1/测试/qiniu_test.jpg' ) );
+```
+
+```
+$basicThumb = \QiniuAPI\Avthumb\Avthumb::basic();
+echo $basicThumb;
+//avthumb/mp4/ab/192k/ar/8000/r/24/vb/128k
+```
+
 ### 图像处理
 
 1. 水印接口[watermark](http://developer.qiniu.com/docs/v6/api/reference/fop/image/watermark.html)
