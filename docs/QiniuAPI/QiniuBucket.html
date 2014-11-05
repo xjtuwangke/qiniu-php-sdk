@@ -129,13 +129,66 @@
                 </td>
                 <td></td>
             </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;array
+                </td>
+                <td class="last">
+                    <a href="#method_put">put</a>(<abbr title="QiniuAPI\$file">$file</abbr> $file, <abbr title="QiniuAPI\$key">$key</abbr> $key, <a href="../Qiniu/QiniuRSPutPolicy.html"><abbr title="Qiniu\QiniuRSPutPolicy">QiniuRSPutPolicy</abbr></a> $putPolicy = null)
+                    <p>上传单个文件</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;array
+                </td>
+                <td class="last">
+                    <a href="#method_delete">delete</a>(<abbr title="QiniuAPI\$key">$key</abbr> $key)
+                    <p>删除单个文件</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;array
+                </td>
+                <td class="last">
+                    <a href="#method_ls">ls</a>(<abbr title="QiniuAPI\$key">$key</abbr> $key)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;array
+                </td>
+                <td class="last">
+                    <a href="#method_copy">copy</a>(<abbr title="QiniuAPI\$oldKey">$oldKey</abbr> $oldKey, <a href="../QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a> $target)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;array
+                </td>
+                <td class="last">
+                    <a href="#method_move">move</a>(<abbr title="QiniuAPI\$oldKey">$oldKey</abbr> $oldKey, <a href="../QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a> $target)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
             </table>
 
 
         <h2>Details</h2>
 
                         <h3 id="method_setDomain">
-        <div class="location">at line 45</div>
+        <div class="location">at line 48</div>
         <code>        static    public            
     <strong>setDomain</strong>(string $domain, null|string $bucketName = null)</code>
     </h3>
@@ -167,7 +220,7 @@
     </div>
 
                 <h3 id="method_domain">
-        <div class="location">at line 57</div>
+        <div class="location">at line 60</div>
         <code>        static    public            null|string
     <strong>domain</strong>()</code>
     </h3>
@@ -193,7 +246,7 @@
     </div>
 
                 <h3 id="method_bucketName">
-        <div class="location">at line 65</div>
+        <div class="location">at line 68</div>
         <code>        static    public            null|string
     <strong>bucketName</strong>()</code>
     </h3>
@@ -219,7 +272,7 @@
     </div>
 
                 <h3 id="method_setPrivate">
-        <div class="location">at line 73</div>
+        <div class="location">at line 76</div>
         <code>        static    public            
     <strong>setPrivate</strong>(bool $private = true)</code>
     </h3>
@@ -246,7 +299,7 @@
     </div>
 
                 <h3 id="method_makeURL">
-        <div class="location">at line 83</div>
+        <div class="location">at line 86</div>
         <code>        static    public            string
     <strong>makeURL</strong>(<abbr title="QiniuAPI\$key">$key</abbr> $key, array $fops = array())</code>
     </h3>
@@ -289,7 +342,7 @@
     </div>
 
                 <h3 id="method_entry">
-        <div class="location">at line 102</div>
+        <div class="location">at line 105</div>
         <code>        static    public            <a href="../QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a>
     <strong>entry</strong>(null $key = null)</code>
     </h3>
@@ -326,7 +379,7 @@
     </div>
 
                 <h3 id="method_putPolicyFactory">
-        <div class="location">at line 112</div>
+        <div class="location">at line 115</div>
         <code>        static    public            <a href="../QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a>
     <strong>putPolicyFactory</strong>()</code>
     </h3>
@@ -352,7 +405,7 @@
     </div>
 
                 <h3 id="method_putCallback">
-        <div class="location">at line 127</div>
+        <div class="location">at line 130</div>
         <code>        static    public            
     <strong>putCallback</strong>()</code>
     </h3>
@@ -369,7 +422,7 @@
     </div>
 
                 <h3 id="method_putToken">
-        <div class="location">at line 141</div>
+        <div class="location">at line 144</div>
         <code>        static    public            string
     <strong>putToken</strong>(<abbr title="QiniuAPI\$key">$key</abbr> $key)</code>
     </h3>
@@ -395,6 +448,206 @@
                     <table>
         <tr>
             <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_put">
+        <div class="location">at line 157</div>
+        <code>        static    public            array
+    <strong>put</strong>(<abbr title="QiniuAPI\$file">$file</abbr> $file, <abbr title="QiniuAPI\$key">$key</abbr> $key, <a href="../Qiniu/QiniuRSPutPolicy.html"><abbr title="Qiniu\QiniuRSPutPolicy">QiniuRSPutPolicy</abbr></a> $putPolicy = null)</code>
+    </h3>
+    <div class="details">
+        <p>上传单个文件</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\$file">$file</abbr></td>
+                <td>$file</td>
+                <td>string 本地文件文件名</td>
+            </tr>
+                    <tr>
+                <td><abbr title="QiniuAPI\$key">$key</abbr></td>
+                <td>$key</td>
+                <td>string 七牛目标文件名</td>
+            </tr>
+                    <tr>
+                <td><a href="../Qiniu/QiniuRSPutPolicy.html"><abbr title="Qiniu\QiniuRSPutPolicy">QiniuRSPutPolicy</abbr></a></td>
+                <td>$putPolicy</td>
+                <td>上传策略</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>[ $ret , $err , $qiniuEntry ]</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_delete">
+        <div class="location">at line 172</div>
+        <code>        static    public            array
+    <strong>delete</strong>(<abbr title="QiniuAPI\$key">$key</abbr> $key)</code>
+    </h3>
+    <div class="details">
+        <p>删除单个文件</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\$key">$key</abbr></td>
+                <td>$key</td>
+                <td>string 七牛目标文件名</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>[ $ret , $err ]</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_ls">
+        <div class="location">at line 187</div>
+        <code>        static    public            array
+    <strong>ls</strong>(<abbr title="QiniuAPI\$key">$key</abbr> $key)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\$key">$key</abbr></td>
+                <td>$key</td>
+                <td>string 七牛目标文件名</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>[ $ret , $err ]</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_copy">
+        <div class="location">at line 198</div>
+        <code>        static    public            array
+    <strong>copy</strong>(<abbr title="QiniuAPI\$oldKey">$oldKey</abbr> $oldKey, <a href="../QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a> $target)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\$oldKey">$oldKey</abbr></td>
+                <td>$oldKey</td>
+                <td>string 源文件名</td>
+            </tr>
+                    <tr>
+                <td><a href="../QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></td>
+                <td>$target</td>
+                <td>目标文件</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_move">
+        <div class="location">at line 216</div>
+        <code>        static    public            array
+    <strong>move</strong>(<abbr title="QiniuAPI\$oldKey">$oldKey</abbr> $oldKey, <a href="../QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a> $target)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="QiniuAPI\$oldKey">$oldKey</abbr></td>
+                <td>$oldKey</td>
+                <td>string 源文件名</td>
+            </tr>
+                    <tr>
+                <td><a href="../QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></td>
+                <td>$target</td>
+                <td>目标文件</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
             <td>
 </td>
         </tr>

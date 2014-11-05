@@ -32,7 +32,7 @@
                                 <a href="#letterI">I</a>
                                 J
                                 <a href="#letterK">K</a>
-                                L
+                                <a href="#letterL">L</a>
                                 <a href="#letterM">M</a>
                                 <a href="#letterN">N</a>
                                 <a href="#letterO">O</a>
@@ -95,7 +95,10 @@
 </dd><dt><a href="QiniuAPI/PutPolicy/PutPolicy.html#method_callbackUrl"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr>::callbackUrl</a>() &mdash; <em>Method in class <a href="QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a></em></dt>
                     <dd>上传成功后，七牛云向App-Server发送POST请求的URL 必须是公网上可以正常进行POST请求并能响应HTTP/1.1 200 OK的有效URL。 另外，为了给客户端有一致的体验，我们要求 callbackUrl 返回包 Content-Type 为 "application/json"，即返回的内容必须是合法的 JSON 文本。 出于高可用的考虑，本字段允许设置多个 callbackUrl(用 ; 分隔)，在前一个 callbackUrl 请求失败的时候会依次重试下一个 callbackUrl。 一个典型例子是 http://<ip1>/callback;http://<ip2>/callback，并同时指定下面的 callbackHost 字段。 在 callbackUrl 中使用 ip 的好处是减少了对 dns 解析的依赖，可改善回调的性能和稳定性。</dd><dt><a href="QiniuAPI/PutPolicy/PutPolicy.html#method_callbackHost"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr>::callbackHost</a>() &mdash; <em>Method in class <a href="QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a></em></dt>
                     <dd>上传成功后，七牛云向App-Server发送回调通知时的 Host 值，仅当同时设置了 callbackUrl 时有效。</dd><dt><a href="QiniuAPI/PutPolicy/PutPolicy.html#method_callbackBody"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr>::callbackBody</a>() &mdash; <em>Method in class <a href="QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a></em></dt>
-                    <dd>上传成功后，七牛云向App-Server发送POST请求的数据 支持魔法变量和自定义变量。 callbackBody 要求是合法的 url query string。如：key=$(key)&amp;hash=$(etag)&amp;w=$(imageInfo.width)&amp;h=$(imageInfo.height)。</dd><dt><a href="Qiniu/Conf.html"><abbr title="Qiniu\Conf">Conf</abbr></a> &mdash; <em>Class in namespace <a href="Qiniu.html">Qiniu</a></em></dt>
+                    <dd>上传成功后，七牛云向App-Server发送POST请求的数据 支持魔法变量和自定义变量。 callbackBody 要求是合法的 url query string。如：key=$(key)&amp;hash=$(etag)&amp;w=$(imageInfo.width)&amp;h=$(imageInfo.height)。</dd><dt><a href="QiniuAPI/QiniuBucket.html#method_copy"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::copy</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
+                    <dd>
+</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_copy"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::copy</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
+                    <dd>复制</dd><dt><a href="Qiniu/Conf.html"><abbr title="Qiniu\Conf">Conf</abbr></a> &mdash; <em>Class in namespace <a href="Qiniu.html">Qiniu</a></em></dt>
                     <dd>
 </dd><dt>$<a href="Qiniu/QiniuError.html#property_Code"><abbr title="Qiniu\QiniuError">QiniuError</abbr></a> &mdash; <em>Property in class <a href="Qiniu/QiniuError.html"><abbr title="Qiniu\QiniuError">QiniuError</abbr></a></em></dt>
                     <dd>
@@ -120,7 +123,9 @@
                     <dd>
 </dd><dt><a href="QiniuAPI/PutPolicy/PutPolicy.html#method_detectMime"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr>::detectMime</a>() &mdash; <em>Method in class <a href="QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a></em></dt>
                     <dd>开启MimeType侦测功能 设为非0值，则忽略上传端传递的文件MimeType信息，使用七牛服务器侦测内容后的判断结果 默认设为0值，如上传端指定了MimeType则直接使用该值，否则按如下顺序侦测MimeType值： 1.</dd><dt><a href="QiniuAPI/QiniuBucket.html#method_domain"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::domain</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
-                    <dd>返回Bucket::$domain</dd><dt><a href="QiniuAPI/Watermark/Gravity.html#method_dx"><abbr title="QiniuAPI\Watermark\Gravity">Gravity</abbr>::dx</a>() &mdash; <em>Method in class <a href="QiniuAPI/Watermark/Gravity.html"><abbr title="QiniuAPI\Watermark\Gravity">Gravity</abbr></a></em></dt>
+                    <dd>返回Bucket::$domain</dd><dt><a href="QiniuAPI/QiniuBucket.html#method_delete"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::delete</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
+                    <dd>删除单个文件</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_delete"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::delete</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
+                    <dd>删除单个文件</dd><dt><a href="QiniuAPI/Watermark/Gravity.html#method_dx"><abbr title="QiniuAPI\Watermark\Gravity">Gravity</abbr>::dx</a>() &mdash; <em>Method in class <a href="QiniuAPI/Watermark/Gravity.html"><abbr title="QiniuAPI\Watermark\Gravity">Gravity</abbr></a></em></dt>
                     <dd>横轴边距，单位:像素(px)，缺省值为10</dd><dt><a href="QiniuAPI/Watermark/Gravity.html#method_dy"><abbr title="QiniuAPI\Watermark\Gravity">Gravity</abbr>::dy</a>() &mdash; <em>Method in class <a href="QiniuAPI/Watermark/Gravity.html"><abbr title="QiniuAPI\Watermark\Gravity">Gravity</abbr></a></em></dt>
                     <dd>纵轴边距，单位:像素(px)，缺省值为10</dd><dt><a href="QiniuAPI/Watermark/Image.html#method_dissolve"><abbr title="QiniuAPI\Watermark\Image">Image</abbr>::dissolve</a>() &mdash; <em>Method in class <a href="QiniuAPI/Watermark/Image.html"><abbr title="QiniuAPI\Watermark\Image">Image</abbr></a></em></dt>
                     <dd>透明度，取值范围1-100，缺省值为100（完全不透明）</dd><dt><a href="QiniuAPI/Watermark/Text.html#method_dissolve"><abbr title="QiniuAPI\Watermark\Text">Text</abbr>::dissolve</a>() &mdash; <em>Method in class <a href="QiniuAPI/Watermark/Text.html"><abbr title="QiniuAPI\Watermark\Text">Text</abbr></a></em></dt>
@@ -137,7 +142,8 @@
                     <dd>唯一属主标识 特殊场景下非常有用，比如根据App-Client标识给图片或视频打水印。</dd><dt><a href="QiniuAPI/QiniuBucket.html#method_entry"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::entry</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
                     <dd>构造QiniuBucket下的QiniuEntry</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_entryURI"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::entryURI</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
                     <dd>返回bucket:key形式的entryURI</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_encodedEntryURI"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::encodedEntryURI</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
-                    <dd>bucket:key形式的entryURI做urlsafe<em>base64</em>encode</dd><dt>$<a href="Qiniu/QiniuError.html#property_Err"><abbr title="Qiniu\QiniuError">QiniuError</abbr></a> &mdash; <em>Property in class <a href="Qiniu/QiniuError.html"><abbr title="Qiniu\QiniuError">QiniuError</abbr></a></em></dt>
+                    <dd>bucket:key形式的entryURI做urlsafe<em>base64</em>encode</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_exif"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::exif</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
+                    <dd>返回image entry的exif信息</dd><dt>$<a href="Qiniu/QiniuError.html#property_Err"><abbr title="Qiniu\QiniuError">QiniuError</abbr></a> &mdash; <em>Property in class <a href="Qiniu/QiniuError.html"><abbr title="Qiniu\QiniuError">QiniuError</abbr></a></em></dt>
                     <dd>
 </dd><dt>$<a href="Qiniu/QiniuRSGetPolicy.html#property_Expires"><abbr title="Qiniu\QiniuRSGetPolicy">QiniuRSGetPolicy</abbr></a> &mdash; <em>Property in class <a href="Qiniu/QiniuRSGetPolicy.html"><abbr title="Qiniu\QiniuRSGetPolicy">QiniuRSGetPolicy</abbr></a></em></dt>
                     <dd>
@@ -193,11 +199,15 @@
 </dd><dt><a href="QiniuAPI/ImageView2/ImageView2.html#method_interlace"><abbr title="QiniuAPI\ImageView2\ImageView2">ImageView2</abbr>::interlace</a>() &mdash; <em>Method in class <a href="QiniuAPI/ImageView2/ImageView2.html"><abbr title="QiniuAPI\ImageView2\ImageView2">ImageView2</abbr></a></em></dt>
                     <dd>
 </dd><dt><a href="QiniuAPI/PutPolicy/PutPolicy.html#method_insertOnly"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr>::insertOnly</a>() &mdash; <em>Method in class <a href="QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a></em></dt>
-                    <dd>限定为“新增”语意 如果设置为非0值，则无论scope设置为什么形式，仅能以新增模式上传文件。</dd><dt><a href="QiniuAPI/Watermark/Image.html"><abbr title="QiniuAPI\Watermark\Image">Image</abbr></a> &mdash; <em>Class in namespace <a href="QiniuAPI/Watermark.html">QiniuAPI\Watermark</a></em></dt>
+                    <dd>限定为“新增”语意 如果设置为非0值，则无论scope设置为什么形式，仅能以新增模式上传文件。</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_imageInfo"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::imageInfo</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
+                    <dd>返回image entry的imageInfo</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_imageAve"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::imageAve</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
+                    <dd>返回image entry的图片主色调信息</dd><dt><a href="QiniuAPI/Watermark/Image.html"><abbr title="QiniuAPI\Watermark\Image">Image</abbr></a> &mdash; <em>Class in namespace <a href="QiniuAPI/Watermark.html">QiniuAPI\Watermark</a></em></dt>
                     <dd>图片水印</dd><dt><a href="QiniuAPI/Watermark/Image.html#method_imageUrl"><abbr title="QiniuAPI\Watermark\Image">Image</abbr>::imageUrl</a>() &mdash; <em>Method in class <a href="QiniuAPI/Watermark/Image.html"><abbr title="QiniuAPI\Watermark\Image">Image</abbr></a></em></dt>
                     <dd>水印源图片网址，必须有效且返回一张图片</dd><dt>$<a href="Qiniu/QiniuRSPutPolicy.html#property_InsertOnly"><abbr title="Qiniu\QiniuRSPutPolicy">QiniuRSPutPolicy</abbr></a> &mdash; <em>Property in class <a href="Qiniu/QiniuRSPutPolicy.html"><abbr title="Qiniu\QiniuRSPutPolicy">QiniuRSPutPolicy</abbr></a></em></dt>
                     <dd>
-</dd>        </dl><h2 id="letterK">K</h2>
+</dd>        </dl><h2 id="letterJ">J</h2>
+        <dl id="index"><dt><a href="QiniuAPI/QiniuEntry.html#method_jsonResponse"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::jsonResponse</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
+                    <dd>解析服务器返回的json response</dd>        </dl><h2 id="letterK">K</h2>
         <dl id="index"><dt><a href="QiniuAPI/ImageMogr2/Thumbnail.html#method_keepRatio"><abbr title="QiniuAPI\ImageMogr2\Thumbnail">Thumbnail</abbr>::keepRatio</a>() &mdash; <em>Method in class <a href="QiniuAPI/ImageMogr2/Thumbnail.html"><abbr title="QiniuAPI\ImageMogr2\Thumbnail">Thumbnail</abbr></a></em></dt>
                     <dd>
 </dd><dt><a href="QiniuAPI/QiniuEntry.html#method_key"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::key</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
@@ -207,13 +217,19 @@
 </dd>        </dl><h2 id="letterL">L</h2>
         <dl id="index"><dt><a href="QiniuAPI/ImageView2/ImageView2.html#method_longAndShortEdge"><abbr title="QiniuAPI\ImageView2\ImageView2">ImageView2</abbr>::longAndShortEdge</a>() &mdash; <em>Method in class <a href="QiniuAPI/ImageView2/ImageView2.html"><abbr title="QiniuAPI\ImageView2\ImageView2">ImageView2</abbr></a></em></dt>
                     <dd>
-</dd>        </dl><h2 id="letterM">M</h2>
+</dd><dt><a href="QiniuAPI/QiniuBucket.html#method_ls"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::ls</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
+                    <dd>
+</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_ls"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::ls</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
+                    <dd>获取文件信息</dd>        </dl><h2 id="letterM">M</h2>
         <dl id="index"><dt><a href="QiniuAPI/ImageMogr2/Thumbnail.html#method_maxWidthAndHeight"><abbr title="QiniuAPI\ImageMogr2\Thumbnail">Thumbnail</abbr>::maxWidthAndHeight</a>() &mdash; <em>Method in class <a href="QiniuAPI/ImageMogr2/Thumbnail.html"><abbr title="QiniuAPI\ImageMogr2\Thumbnail">Thumbnail</abbr></a></em></dt>
                     <dd>
 </dd><dt><a href="QiniuAPI/ImageMogr2/Thumbnail.html#method_minWidthAndHeight"><abbr title="QiniuAPI\ImageMogr2\Thumbnail">Thumbnail</abbr>::minWidthAndHeight</a>() &mdash; <em>Method in class <a href="QiniuAPI/ImageMogr2/Thumbnail.html"><abbr title="QiniuAPI\ImageMogr2\Thumbnail">Thumbnail</abbr></a></em></dt>
                     <dd>
 </dd><dt><a href="QiniuAPI/QiniuBucket.html#method_makeURL"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::makeURL</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
-                    <dd>根据$key和一系列FOP操作获取资源URL</dd><dt><a href="Qiniu/QiniuExif.html#method_MakeRequest"><abbr title="Qiniu\QiniuExif">QiniuExif</abbr>::MakeRequest</a>() &mdash; <em>Method in class <a href="Qiniu/QiniuExif.html"><abbr title="Qiniu\QiniuExif">QiniuExif</abbr></a></em></dt>
+                    <dd>根据$key和一系列FOP操作获取资源URL</dd><dt><a href="QiniuAPI/QiniuBucket.html#method_move"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::move</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
+                    <dd>
+</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_move"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::move</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
+                    <dd>移动</dd><dt><a href="Qiniu/QiniuExif.html#method_MakeRequest"><abbr title="Qiniu\QiniuExif">QiniuExif</abbr>::MakeRequest</a>() &mdash; <em>Method in class <a href="Qiniu/QiniuExif.html"><abbr title="Qiniu\QiniuExif">QiniuExif</abbr></a></em></dt>
                     <dd>
 </dd><dt><a href="Qiniu/QiniuImageInfo.html#method_MakeRequest"><abbr title="Qiniu\QiniuImageInfo">QiniuImageInfo</abbr>::MakeRequest</a>() &mdash; <em>Method in class <a href="Qiniu/QiniuImageInfo.html"><abbr title="Qiniu\QiniuImageInfo">QiniuImageInfo</abbr></a></em></dt>
                     <dd>
@@ -283,7 +299,10 @@
                     <dd>生成默认的PutPolicy</dd><dt><a href="QiniuAPI/QiniuBucket.html#method_putCallback"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::putCallback</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
                     <dd>
 </dd><dt><a href="QiniuAPI/QiniuBucket.html#method_putToken"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::putToken</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
-                    <dd>获取putToken</dd><dt><a href="QiniuAPI/Watermark/Image.html#method_parameterToString"><abbr title="QiniuAPI\Watermark\Image">Image</abbr>::parameterToString</a>() &mdash; <em>Method in class <a href="QiniuAPI/Watermark/Image.html"><abbr title="QiniuAPI\Watermark\Image">Image</abbr></a></em></dt>
+                    <dd>获取putToken</dd><dt><a href="QiniuAPI/QiniuBucket.html#method_put"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr>::put</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuBucket.html"><abbr title="QiniuAPI\QiniuBucket">QiniuBucket</abbr></a></em></dt>
+                    <dd>上传单个文件</dd><dt><a href="QiniuAPI/QiniuEntry.html#method_put"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr>::put</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuEntry.html"><abbr title="QiniuAPI\QiniuEntry">QiniuEntry</abbr></a></em></dt>
+                    <dd>
+</dd><dt><a href="QiniuAPI/Watermark/Image.html#method_parameterToString"><abbr title="QiniuAPI\Watermark\Image">Image</abbr>::parameterToString</a>() &mdash; <em>Method in class <a href="QiniuAPI/Watermark/Image.html"><abbr title="QiniuAPI\Watermark\Image">Image</abbr></a></em></dt>
                     <dd>
 </dd><dt><a href="QiniuAPI/Watermark/Text.html#method_parameterToString"><abbr title="QiniuAPI\Watermark\Text">Text</abbr>::parameterToString</a>() &mdash; <em>Method in class <a href="QiniuAPI/Watermark/Text.html"><abbr title="QiniuAPI\Watermark\Text">Text</abbr></a></em></dt>
                     <dd>
@@ -367,7 +386,8 @@
                     <dd>旋转角度 取值范围1-360，缺省为不旋转。</dd><dt><a href="QiniuAPI/ImageView2/ImageView2.html#method_reset"><abbr title="QiniuAPI\ImageView2\ImageView2">ImageView2</abbr>::reset</a>() &mdash; <em>Method in class <a href="QiniuAPI/ImageView2/ImageView2.html"><abbr title="QiniuAPI\ImageView2\ImageView2">ImageView2</abbr></a></em></dt>
                     <dd>
 </dd><dt><a href="QiniuAPI/PutPolicy/PutPolicy.html#method_reset"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr>::reset</a>() &mdash; <em>Method in class <a href="QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a></em></dt>
-                    <dd>重置参数</dd><dt><a href="QiniuAPI/PutPolicy/PutPolicy.html#method_returnUrl"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr>::returnUrl</a>() &mdash; <em>Method in class <a href="QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a></em></dt>
+                    <dd>
+</dd><dt><a href="QiniuAPI/PutPolicy/PutPolicy.html#method_returnUrl"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr>::returnUrl</a>() &mdash; <em>Method in class <a href="QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a></em></dt>
                     <dd>Web端文件上传成功后，浏览器执行303跳转的URL 通常用于HTML Form上传。 文件上传成功后会跳转到<returnUrl>?upload_ret=<queryString>, <queryString>包含returnBody内容。 如不设置returnUrl，则直接将returnBody的内容返回给客户端。</dd><dt><a href="QiniuAPI/PutPolicy/PutPolicy.html#method_returnBody"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr>::returnBody</a>() &mdash; <em>Method in class <a href="QiniuAPI/PutPolicy/PutPolicy.html"><abbr title="QiniuAPI\PutPolicy\PutPolicy">PutPolicy</abbr></a></em></dt>
                     <dd>上传成功后，自定义七牛云最终返回給上传端（在指定returnUrl时是携带在跳转路径参数中）的数据 支持魔法变量和自定义变量。returnBody 要求是合法的 JSON 文本。如：{"key": $(key), "hash": $(etag), "w": $(imageInfo.width), "h": $(imageInfo.height)}。</dd><dt><a href="QiniuAPI/QiniuAPIParameter.html#method_reset"><abbr title="QiniuAPI\QiniuAPIParameter">QiniuAPIParameter</abbr>::reset</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuAPIParameter.html"><abbr title="QiniuAPI\QiniuAPIParameter">QiniuAPIParameter</abbr></a></em></dt>
                     <dd>参数reset</dd><dt><a href="QiniuAPI/QiniuFop.html#method_reset"><abbr title="QiniuAPI\QiniuFop">QiniuFop</abbr>::reset</a>() &mdash; <em>Method in class <a href="QiniuAPI/QiniuFop.html"><abbr title="QiniuAPI\QiniuFop">QiniuFop</abbr></a></em></dt>
