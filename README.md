@@ -146,6 +146,51 @@ var_dump( $rm );
  */
    ```
 
+1. 移动和复制
+
+  ```
+  $put = MyBucket::put( __FILE__ , 'test/this.php' );
+  MyBucket::delete( 'test/that.php' );
+  MyBucket::delete( 'test/that1.php' );
+  MyBucket::delete( 'test/that2.php' );
+  MyBucket::delete( 'test/that3.php' );
+  $copy = MyBucket::entry( 'test/this.php' )->copy( MyBucket::entry( 'test/that.php' ) );
+  var_dump( $copy );
+  $copy = MyBucket::move( 'test/this.php' , MyBucket::entry( 'test/that.php' ) );
+  var_dump( $copy );
+  $move = MyBucket::entry( 'test/this.php' )->move( MyBucket::entry( 'test/that2.php') );
+  var_dump( $move );
+  $move = MyBucket::move( 'test/this.php' , MyBucket::entry( 'test/that3.php') );
+  var_dump( $move );
+  ```
+
+  返回
+
+  ```
+  array (size=2)
+    0 => boolean true
+    1 => null
+  array (size=2)
+    0 => boolean false
+    1 =>
+      object(Qiniu\QiniuError)[11]
+        public 'Err' => string 'file exists' (length=11)
+        public 'Reqid' => string 'ak0AAPG88grG36MT' (length=16)
+        public 'Details' => string '' (length=0)
+        public 'Code' => int 614
+  array (size=2)
+    0 => boolean true
+    1 => null
+  array (size=2)
+    0 => boolean false
+    1 =>
+      object(Qiniu\QiniuError)[12]
+        public 'Err' => string 'no such file or directory' (length=25)
+        public 'Reqid' => string '10MAAIK-MhzG36MT' (length=16)
+        public 'Details' => string '' (length=0)
+        public 'Code' => int 612
+  ```
+
 ### 宏命令
 
 ```
