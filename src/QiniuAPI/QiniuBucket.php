@@ -8,7 +8,10 @@
 
 namespace QiniuAPI;
 
+use Qiniu\QiniuMacHttpClient;
+use Qiniu\QiniuPutExtra;
 use Qiniu\QiniuRSGetPolicy;
+use Qiniu\QiniuRSPutPolicy;
 use QiniuAPI\PutPolicy\PutPolicy;
 use Qiniu\RSUtils;
 
@@ -142,6 +145,85 @@ class QiniuBucket {
         $putPolicy = static::putPolicyFactory();
         $putPolicy->setScope( static::bucketName() , $key );
         return $putPolicy->token();
+    }
+
+    /**
+     * 上传单个文件
+     * @param                  $file  string 本地文件文件名
+     * @param                  $key   string 七牛目标文件名
+     * @param QiniuRSPutPolicy $putPolicy 上传策略
+     * @return array [ $ret , $err , $qiniuEntry ]
+     */
+    public static function put( $file , $key , QiniuRSPutPolicy $putPolicy = null ){
+        if( is_null( $putPolicy ) ){
+            $putPolicy = new QiniuRSPutPolicy( static::$bucketName . ":" . $key );
+        }
+        $upToken = $putPolicy->Token(null);
+        list($ret, $err) = QiniuPutExtra::Qiniu_PutFile($upToken, $key, $file , null);
+        $qiniuEntry = static::entry( $key );
+        return array( $ret , $err , $qiniuEntry );
+    }
+
+    /**
+     * 删除单个文件
+     * @param $key  string 七牛目标文件名
+     * @return array [ $ret , $err ]
+     */
+    public static function delete( $key ){
+        $client = new QiniuMacHttpClient(null);
+        $ret = RSUtils::Qiniu_RS_Delete($client, static::$bucketName, $key);
+        if( $ret ){
+            return array( false , $ret );
+        }
+        else{
+            return array( true , $ret );
+        }
+    }
+
+    /**
+     * @param $key string 七牛目标文件名
+     * @return array [ $ret , $err ]
+     */
+    public static function ls( $key ){
+        $client = new QiniuMacHttpClient(null);
+        list($ret, $err) = RSUtils::Qiniu_RS_Stat( $client, static::$bucketName, $key );
+        return array( $ret , $err );
+    }
+
+    /**
+     * @param            $oldKey string 源文件名
+     * @param QiniuEntry $target 目标文件
+     * @return array
+     */
+    public static function copy( $oldKey , QiniuEntry $target ){
+        $client = new QiniuMacHttpClient(null);
+        $newBucketName = $target->bucket();
+        $newKey = $target->key();
+        $err = RSUtils::Qiniu_RS_Copy( $client , static::$bucketName , $oldKey , $newBucketName , $newKey );
+        if( is_null( $err ) ){
+            return array( true , $err );
+        }
+        else{
+            return array( false , $err );
+        }
+    }
+
+    /**
+     * @param            $oldKey string 源文件名
+     * @param QiniuEntry $target 目标文件
+     * @return array
+     */
+    public static function move( $oldKey , QiniuEntry $target ){
+        $client = new QiniuMacHttpClient(null);
+        $newBucketName = $target->bucket();
+        $newKey = $target->key();
+        $err = RSUtils::Qiniu_RS_Move( $client , static::$bucketName , $oldKey , $newBucketName , $newKey );
+        if( is_null( $err ) ){
+            return array( true , $err );
+        }
+        else{
+            return array( false , $err );
+        }
     }
 
 }

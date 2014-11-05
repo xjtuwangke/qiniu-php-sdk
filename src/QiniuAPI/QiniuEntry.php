@@ -8,6 +8,7 @@
 
 namespace QiniuAPI;
 
+use Qiniu\QiniuRSPutPolicy;
 use \Qiniu\Utils;
 
 /**
@@ -136,5 +137,48 @@ class QiniuEntry {
         $content = curl_exec($ch);
         curl_close($ch);
         return json_decode( $content , true );
+    }
+
+    /**
+     * @param                  $file
+     * @param QiniuRSPutPolicy $putPolicy
+     * @return array
+     */
+    public function put( $file , QiniuRSPutPolicy $putPolicy = null ){
+        return $this->bucket->put( $file , $this->key() , $putPolicy );
+    }
+
+    /**
+     * 删除单个文件
+     * @return array [ $ret , $err ]
+     */
+    public function delete(){
+        return $this->bucket->delete( $this->key() );
+    }
+
+    /**
+     * 获取文件信息
+     * @return array [ $ret , $err ]
+     */
+    public function ls(){
+       return $this->bucket->ls( $this->key() );
+    }
+
+    /**
+     * 复制
+     * @param QiniuEntry $target 目标文件
+     * @return array
+     */
+    public function copy( QiniuEntry $target ){
+        return $this->bucket->copy( $this->key() , $target );
+    }
+
+    /**
+     * 移动
+     * @param QiniuEntry $target 目标文件
+     * @return array
+     */
+    public function move( QiniuEntry $target ){
+        return $this->bucket->move( $this->key() , $target );
     }
 } 

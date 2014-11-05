@@ -62,14 +62,95 @@ $entry->url();
 
 ### 文件上传
 
-文档TBD
+1. 单个文件上传
+
+    ```
+$put = MyBucket::put( __FILE__ , 'test/this.php' );
+// MyBucket::entry( 'test/this.php' )->put( __FILE__ );
+var_dump( $put );
+/*
+ array (size=3)
+  0 =>
+    array (size=2)
+      'hash' => string 'FgYSz1zq0d9mT5Nl_DkFGsuncYRy' (length=28)
+      'key' => string 'test/this.php' (length=13)
+  1 => null
+  2 =>
+    object(QiniuAPI\QiniuEntry)[9]
+      protected 'bucket' =>
+        object(MyBucket)[10]
+      protected 'key' => string 'test/this.php' (length=13)
+ */   
+ ```
+
+1. 查看文件
+
+    ````
+$ls = MyBucket::ls( 'test/this.php' );
+//MyBucket::entry( 'test/this.php' )->ls();
+var_dump( $ls );
+/*
+ array (size=2)
+  0 =>
+    array (size=4)
+      'fsize' => int 1872
+      'hash' => string 'FkYSYaJKtvKUwrOQk0D4RqFAIj3W' (length=28)
+      'mimeType' => string 'application/x-httpd-php' (length=23)
+      'putTime' => int 14152138860482670
+  1 => null
+ */
+    ````
+
+    ```
+$ls = MyBucket::ls( 'no-file' );
+//MyBucket::entry( 'no-file' )->ls();
+var_dump( $ls );
+/*
+ array (size=2)
+  0 => null
+  1 =>
+    object(Qiniu\QiniuError)[12]
+      public 'Err' => string 'no such file or directory' (length=25)
+      public 'Reqid' => string 'Dl0AAKrY2CCI2aMT' (length=16)
+      public 'Details' => string '' (length=0)
+      public 'Code' => int 612
+ */
+     ```
+    
+1. 删除文件
+
+   ```
+$rm = MyBucket::delete( 'no-file' );
+//or $rm = MyBucket::entry( 'no-file' )->delete();
+var_dump( $rm );
+/*
+ array (size=2)
+  0 => boolean false
+  1 =>
+    object(Qiniu\QiniuError)[11]
+      public 'Err' => string 'no such file or directory' (length=25)
+      public 'Reqid' => string '10MAAGhE77nY2aMT' (length=16)
+      public 'Details' => string '' (length=0)
+      public 'Code' => int 612
+ */
+ ```
+ 
+   ```
+$rm = MyBucket::delete( 'test/this.php' );
+//or $rm = MyBucket::entry( 'test/this.php' )->delete();
+var_dump( $rm );
+/*
+ array (size=2)
+  0 => boolean true
+  1 => null
+ */
+   ```
 
 ### 图像处理
 
 1. 水印接口[watermark](http://developer.qiniu.com/docs/v6/api/reference/fop/image/watermark.html)
 
-
-```
+    ```
 $watermark = new \QiniuAPI\Watermark\Watermark();
 $image1 = new \QiniuAPI\Watermark\Image();
 $gravity1 = new \QiniuAPI\Watermark\Gravity();
@@ -79,22 +160,22 @@ $text2  = new \QiniuAPI\Watermark\Text();
 $gravity2 = new \QiniuAPI\Watermark\Gravity();
 $gravity2->gravity( \QiniuAPI\Watermark\Gravity::Gravity9 )->dx( 21 )->dy( 22 );
 $text2->gravity( $gravity2 )->text( '测试文字' )->font( '楷体' )->fontSize( 40 )->fill( '#FFFFFF' )->dissolve( 51 );
-$watermark->addParameter( $image1 )->addParameter( $text2 );
-
+$watermark->addParameter( $image1 )->addParameter( $text2 );    
 $url = MyBucket::entry( 'upload/ftp/gofarms-1/测试/qiniu_test.jpg' )->url( [ $watermark ] );
 ```
 
-2. 基本图片处理[ImageView2](http://developer.qiniu.com/docs/v6/api/reference/fop/image/imageview2.html)
 
-```
+1. 基本图片处理[ImageView2](http://developer.qiniu.com/docs/v6/api/reference/fop/image/imageview2.html)
+
+    ```
 $imageView2 = new ImageView2();
 $imageView2->widthAndHeight( 200 ,100 )->format( 'jpg' )->interlace( true );
 $url = MyBucket::entry( 'upload/ftp/gofarms-1/测试/qiniu_test.jpg' )->url( [ $imageView2 ] );
-```
+    ```
 
 3. 高级图片处理[imageMogr2](http://developer.qiniu.com/docs/v6/api/reference/fop/image/imagemogr2.html)
 
-```
+    ```
 $imageMog2 = new ImageMogr2();
 $quality = new \QiniuAPI\ImageMogr2\Quality();
 $blur    = new \QiniuAPI\ImageMogr2\Blur();
@@ -103,7 +184,6 @@ $interlace = new \QiniuAPI\ImageMogr2\Interlace();
 $rotate = new \QiniuAPI\ImageMogr2\Rotate();
 $thumbnail = new \QiniuAPI\ImageMogr2\Thumbnail();
 $crop = new \QiniuAPI\ImageMogr2\Crop();
-
 $imageMog2
     ->addParameter( $thumbnail->keepRatio()->maxWidthAndHeight( 300 , 200 ) )
     ->addParameter( $crop->gravity( \QiniuAPI\ImageMogr2\Crop::Gravity3 )->cropSize( 100 , 150 )->dx( -2 )->dy( 3 ) )
@@ -117,19 +197,19 @@ $url = MyBucket::entry( 'upload/ftp/gofarms-1/测试/qiniu_test.jpg' )->url( [ $
 
 4. 图片基本信息[imageInfo](http://developer.qiniu.com/docs/v6/api/reference/fop/image/imageinfo.html)
 
-```
+    ```
 $infoArray = MyBucket::entry( 'upload/ftp/gofarms-1/测试/qiniu_test.jpg' )->imageInfo();
 ```
 
 5. 图片exif信息[exif](http://developer.qiniu.com/docs/v6/api/reference/fop/image/exif.html)
 
-```
+    ```
 $infoArray = MyBucket::entry( 'upload/ftp/gofarms-1/测试/qiniu_test.jpg' )->exif();
 ```
 
 6. 图片主色调[imageAve](http://developer.qiniu.com/docs/v6/api/reference/fop/image/imageave.html)
 
-```
+    ```
 $infoArray = MyBucket::entry( 'upload/ftp/gofarms-1/测试/qiniu_test.jpg' )->imageAve();
 ```
 
@@ -137,12 +217,13 @@ $infoArray = MyBucket::entry( 'upload/ftp/gofarms-1/测试/qiniu_test.jpg' )->im
 
 1. Avthumb
 
-\QiniuAPI\VFrame\VFrame
-\QiniuAPI\Avthumb\Avthumb
+    \QiniuAPI\VFrame\VFrame
+    
+    \QiniuAPI\Avthumb\Avthumb
 
-其余TBD
+    其余TBD
 
-```
+    ```
 $avthumb = new \QiniuAPI\Avthumb\Avthumb();
 $avthumb->format('mp4')->audioBitRate( '192k' )->audioSamplingRate( 8000 )->videoFrameRate( 24 );
 ```
