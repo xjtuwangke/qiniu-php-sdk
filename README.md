@@ -18,8 +18,8 @@ Copyright (c) 2012-2014 qiniu.com
 1. 设置access key和secret key
 
 ```
-Conf::$QINIU_ACCESS_KEY = 'access key';
-Conf::$QINIU_SECRET_KEY = 'secret key';
+\Qiniu\Conf::$QINIU_ACCESS_KEY::$QINIU_ACCESS_KEY = 'access key';
+\Qiniu\Conf::$QINIU_ACCESS_KEY::$QINIU_SECRET_KEY = 'secret key';
 ```
 
 2. setup a bucket
