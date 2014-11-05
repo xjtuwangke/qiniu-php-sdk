@@ -97,4 +97,44 @@ class QiniuEntry {
     public function url( $fops = array() ){
         return $this->bucket->makeURL( $this->key() , $fops );
     }
+
+
+    /**
+     * 返回image entry的imageInfo
+     * @return array
+     */
+    public function imageInfo(){
+        return $this->jsonResponse( [ 'imageInfo' ] );
+    }
+
+    /**
+     * 返回image entry的exif信息
+     * @return array
+     */
+    public function exif(){
+        return $this->jsonResponse( [ 'exif' ] );
+    }
+
+    /**
+     * 返回image entry的图片主色调信息
+     * @return array
+     */
+    public function imageAve(){
+        return $this->jsonResponse( [ 'imageAve' ] );
+    }
+
+    /**
+     * 解析服务器返回的json response
+     * @param array $fops
+     * @return array
+     */
+    public function jsonResponse( array $fops ){
+        $url = $this->bucket->makeURL( $this->key() , $fops );
+        $ch = curl_init( $url );
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        $content = curl_exec($ch);
+        curl_close($ch);
+        return json_decode( $content , true );
+    }
 } 
